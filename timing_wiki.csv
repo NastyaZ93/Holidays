@@ -1,0 +1,7 @@
+article,season,baseline,start_week,start_weeks_before,peak_week,peak_weeks_before
+Christmas,2020,3.5,2020-11-01,8.0,2020-12-20,1.0
+Christmas,2021,4.8,2021-11-14,6.0,2021-12-19,1.0
+Christmas,2022,6.8,2022-10-30,8.0,2022-12-18,1.0
+Christmas,2023,4.8,2023-10-29,8.0,2023-12-24,0.0
+Christmas,2024,4.6,2024-11-03,7.0,2024-12-22,0.0
+Christmas,2025,5.0,2025-11-02,8.0,2025-12-21,1.0
