@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What the data shows | Iron Fact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Mountains+of+Christmas:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/snow.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">Iron Fact</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about-us.html">About us</a></li>
+          <li><a href="about-client.html">About our client</a></li>
+          <li><a href="data.html" aria-current="page">What the data shows</a></li>
+          <li><a href="calendar.html">Campaign calendar</a></li>
+          <li><a href="conclusions.html">Conclusions</a></li>
+          <li><a href="sources.html">Sources</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="snow-toggle" data-snow-toggle aria-pressed="true">❄ Snow: on</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <p class="eyebrow">What the data shows</p>
+      <h1>The holiday season in numbers</h1>
+      <p class="lead">US retail sales and online interest, 2020–2025. Hover over any chart to see the exact values.</p>
+    </section>
+
+    <figure class="chart-card">
+      <figcaption>
+        <span class="chart-number">1</span>
+        <h2>US retail sales by month, relative to each year's average (excl. cars and fuel)</h2>
+      </figcaption>
+      <div class="chart" data-chart="heatmap" role="img"
+           aria-label="Heatmap of US retail sales by month and year. December is the darkest red in every year."></div>
+      <p class="takeaway">Retail spikes in December: it is the biggest spending month of the year, every year.</p>
+    </figure>
+
+    <figure class="chart-card">
+      <figcaption>
+        <span class="chart-number">2</span>
+        <h2>Typical year of US retail sales by category, 2020–2025 average (Census, not seasonally adjusted)</h2>
+      </figcaption>
+      <div class="chart" data-chart="category-profile" role="img"
+           aria-label="Line chart of monthly sales by category. Toys, clothing and electronics rise sharply in November and December; grocery stays flat."></div>
+      <p class="takeaway">The main categories where we can observe the spike are Toys &amp; hobby, Clothing and Electronics.</p>
+    </figure>
+
+    <figure class="chart-card">
+      <figcaption>
+        <span class="chart-number">3</span>
+        <h2>Holiday season vs. rest-of-year growth</h2>
+      </figcaption>
+      <div class="chart" data-chart="holiday-growth" role="img"
+           aria-label="Grouped bar chart of year-over-year growth for November–December and January–October, 2021 to 2023."></div>
+      <p class="takeaway">The year-over-year growth of the two holiday months is comparable to the growth of the remaining ten months of the year.</p>
+    </figure>
+
+    <figure class="chart-card">
+      <figcaption>
+        <span class="chart-number">4</span>
+        <h2>Independent signals: interest in Christmas by weeks before Christmas (2020–2025)</h2>
+      </figcaption>
+      <div class="chart" data-chart="christmas-signals" role="img"
+           aria-label="Line chart of Google searches and Wikipedia views for Christmas, rising in the weeks before Christmas and peaking in December."></div>
+      <p class="takeaway">The change in interest shows up in both Google searches and Wikipedia views, which spike during December.</p>
+    </figure>
+
+    <figure class="chart-card">
+      <figcaption>
+        <span class="chart-number">5</span>
+        <h2>Search interest compared with each category's own September level (1× = normal). Average of 2020–2025, United States.</h2>
+      </figcaption>
+      <div class="chart chart-tall" data-chart="category-searches" role="img"
+           aria-label="Six small line charts of search interest by category. Toys climbs to about twice its September level before Christmas; other categories stay close to normal."></div>
+      <p class="takeaway">Toys show an extreme build-up in searches during the holiday season.</p>
+    </figure>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Iron Fact &middot; Holiday Shopping research</p>
+  </footer>
+
+  <script src="js/vendor/plotly.min.js"></script>
+  <script src="js/chart-data.js"></script>
+  <script src="js/charts.js"></script>
+</body>
+</html>
