@@ -1,0 +1,589 @@
+:root {
+  --green-dark: #0f2a1d;
+  --green: #1b4d33;
+  --red: #b3202a;
+  --red-dark: #7d1219;
+  --gold: #e8c46a;
+  --cream: #fbf6ec;
+  --text: #f4efe4;
+  --muted: #cfc6b4;
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+  font-family: "Lato", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 20% 0%, rgba(179, 32, 42, 0.35), transparent 45%),
+    radial-gradient(circle at 90% 30%, rgba(232, 196, 106, 0.12), transparent 40%),
+    linear-gradient(180deg, var(--green-dark) 0%, #08180f 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--gold);
+}
+
+/* Snow overlay: above everything, never blocks interaction */
+#snow-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2147483647;
+}
+
+#snow-overlay::backdrop {
+  display: none;
+}
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(15, 42, 29, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 3px solid var(--red);
+  box-shadow: 0 2px 0 var(--gold);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-family: "Mountains of Christmas", Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.main-nav a {
+  display: block;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible,
+.main-nav a[aria-current="page"] {
+  background: var(--red);
+  color: #fff;
+}
+
+.snow-toggle {
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--gold);
+  cursor: pointer;
+}
+
+.snow-toggle:hover,
+.snow-toggle:focus-visible {
+  background: var(--gold);
+  color: var(--green-dark);
+}
+
+/* Layout */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+/* Hero */
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.85rem;
+  color: var(--gold);
+  margin: 0 0 0.5rem;
+}
+
+.hero h1 {
+  font-family: "Mountains of Christmas", Georgia, serif;
+  font-size: clamp(2.6rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  margin: 0 0 0.75rem;
+  color: #fff;
+  text-shadow: 0 3px 0 var(--red-dark);
+}
+
+.hero .subtitle {
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  font-weight: 300;
+  margin: 0 0 1.75rem;
+  color: var(--cream);
+}
+
+.meta {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.meta div {
+  border-left: 4px solid var(--red);
+  padding-left: 0.9rem;
+}
+
+.meta dt {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold);
+}
+
+.meta dd {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.hero-figure {
+  margin: 0;
+  justify-self: center;
+  position: relative;
+  padding: 12px;
+  background: linear-gradient(135deg, var(--gold), #b8913a);
+  border-radius: var(--radius);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  transform: rotate(1.5deg);
+}
+
+.hero-figure img {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: calc(var(--radius) - 6px);
+}
+
+.hero-figure::before {
+  content: "";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  width: 46px;
+  height: 46px;
+  transform: translateX(-50%) rotate(45deg);
+  background: var(--red);
+  border-radius: 6px 0 6px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Brief cards */
+.brief {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+
+.card {
+  background: rgba(251, 246, 236, 0.06);
+  border: 1px solid rgba(232, 196, 106, 0.35);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+}
+
+.card h2 {
+  font-family: "Mountains of Christmas", Georgia, serif;
+  font-size: 2rem;
+  margin: 0 0 0.5rem;
+  color: var(--gold);
+}
+
+.card p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* Explore links */
+.explore {
+  margin-top: 4rem;
+}
+
+.explore h2 {
+  font-family: "Mountains of Christmas", Georgia, serif;
+  font-size: 2.4rem;
+  text-align: center;
+  margin: 0 0 1.5rem;
+  color: #fff;
+}
+
+.page-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.page-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  height: 100%;
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--red), var(--red-dark));
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: 2px solid transparent;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.page-links a:nth-child(even),
+.page-links li:nth-child(even) a {
+  background: linear-gradient(135deg, var(--green), #123823);
+}
+
+.page-links a:hover,
+.page-links a:focus-visible {
+  transform: translateY(-3px);
+  border-color: var(--gold);
+}
+
+.page-links .icon {
+  font-size: 1.5rem;
+}
+
+/* Under construction pages */
+.construction {
+  text-align: center;
+  max-width: 640px;
+  margin: 3rem auto;
+}
+
+.construction h1 {
+  font-family: "Mountains of Christmas", Georgia, serif;
+  font-size: clamp(2.4rem, 6vw, 3.8rem);
+  margin: 0 0 1rem;
+  color: #fff;
+}
+
+.construction .badge {
+  display: inline-block;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.construction p {
+  font-size: 1.15rem;
+  color: var(--muted);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  background: var(--red);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: var(--red-dark);
+}
+
+/* About us */
+.page-intro {
+  max-width: 800px;
+}
+
+.page-intro h1 {
+  font-family: "Mountains of Christmas", Georgia, serif;
+  font-size: clamp(2.6rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  margin: 0 0 1rem;
+  color: #fff;
+  text-shadow: 0 3px 0 var(--red-dark);
+}
+
+.lead {
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  font-weight: 300;
+  color: var(--cream);
+  margin: 0;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.fact {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--red), var(--red-dark));
+  border: 2px solid var(--gold);
+}
+
+.fact-value {
+  display: block;
+  font-family: "Mountains of Christmas", Georgia, serif;
+  font-size: 2.8rem;
+  line-height: 1.1;
+  color: var(--gold);
+}
+
+.fact-label {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+}
+
+.team {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.team-member {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border-radius: var(--radius);
+  background: rgba(251, 246, 236, 0.06);
+  border: 1px solid rgba(232, 196, 106, 0.35);
+}
+
+.avatar {
+  display: inline-grid;
+  place-items: center;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  font-size: 3rem;
+  background: var(--green);
+  border: 3px solid var(--gold);
+}
+
+img.avatar {
+  display: inline-block;
+  object-fit: cover;
+  vertical-align: top;
+}
+
+.team-member h3 {
+  margin: 1rem 0 0.25rem;
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.role {
+  margin: 0;
+  color: var(--gold);
+}
+
+/* About our client */
+.card-wide {
+  grid-column: 1 / -1;
+}
+
+.card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.3rem;
+  color: var(--gold);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.hypotheses {
+  list-style: none;
+  counter-reset: hypothesis;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.hypotheses li {
+  counter-increment: hypothesis;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--red), var(--red-dark));
+  border: 2px solid var(--gold);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.hypotheses li::before {
+  content: counter(hypothesis);
+  display: block;
+  font-family: "Mountains of Christmas", Georgia, serif;
+  font-size: 2.8rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  color: var(--gold);
+}
+
+/* What the data shows */
+.chart-card {
+  margin: 3rem 0 0;
+  padding: 1.75rem;
+  border-radius: var(--radius);
+  background: var(--cream);
+  color: #1f2a24;
+  border: 3px solid var(--gold);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.chart-card figcaption {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.chart-card h2 {
+  margin: 0;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  line-height: 1.35;
+  color: var(--green-dark);
+}
+
+.chart-number {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  background: var(--red);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.chart {
+  width: 100%;
+  min-height: 420px;
+}
+
+.chart-tall {
+  min-height: 600px;
+}
+
+.takeaway {
+  margin: 1rem 0 0;
+  padding: 0.9rem 1.1rem;
+  border-left: 5px solid var(--red);
+  background: rgba(179, 32, 42, 0.08);
+  border-radius: 0 8px 8px 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--green-dark);
+}
+
+@media (max-width: 600px) {
+  .chart-card {
+    padding: 1rem;
+  }
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(232, 196, 106, 0.25);
+}
+
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .page-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-3,
+  .hypotheses {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .brief,
+  .page-links,
+  .facts,
+  .team {
+    grid-template-columns: 1fr;
+  }
+  .hero-figure {
+    transform: none;
+  }
+}
