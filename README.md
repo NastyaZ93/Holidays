@@ -34,6 +34,9 @@ FRED: Clothing and accessory stores (MRTSSM448USN)
 FRED: Electronics and appliance stores (MRTSSM443USN)
 FRED: Electronic shopping and mail-order (MRTSSM4541USN)
 FRED: Grocery stores (MRTSSM4451USN)
+Kaggle (CSV): US retail sales dataset by kind of business, based on US Census data (file us_retail_sales_2020_2025.xlsx):https://www.kaggle.com/datasets/landlord/usa-monthly-retail-trade?hl=en-US
+Google Trends (CSV downloads): Google Trends, United States, web search, 1 September–31 December, 2020–2025
+Wikipedia Pageviews API: daily views of the English Wikipedia article "Christmas"
 
 # Google trends:how we use it in this project
 
