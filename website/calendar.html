@@ -8,7 +8,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Mountains+of+Christmas:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/calendar.css">
   <script src="js/snow.js" defer></script>
+  <script src="js/calendar.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -29,13 +31,41 @@
     </div>
   </header>
 
-  <main>
-    <section class="construction">
-      <span class="badge" aria-hidden="true">📅</span>
-      <h1>A holiday campaign calendar</h1>
-      <p>This page is under construction. Our elves are working on it!</p>
-      <a class="btn" href="index.html">Back to home</a>
+  <main class="campaign-page">
+    <section class="calendar-intro">
+      <p class="eyebrow">Iron Fact / Campaign planning</p>
+      <h1>Christmas Campaign Calendar <span>2026</span></h1>
+      <p>Prepare early. Lead with toys. Concentrate deal-led activity around Black Friday.</p>
+      <p class="planning-note">Proposed planning dates, informed by historical research, not a forecast. Campaign view: September 1, 2026 to January 7, 2027; reporting continues to January 15.</p>
     </section>
+    <section class="calendar-workspace" aria-labelledby="timeline-title">
+      <div class="calendar-toolbar">
+        <h2 id="timeline-title">Season activation plan</h2>
+        <div class="calendar-controls">
+          <label>Category <select id="category-filter"><option value="all">All campaigns</option></select></label>
+          <label class="priority-filter"><input id="priority-filter" type="checkbox"> High priority only</label>
+          <button id="reset-filters" type="button">Reset filters</button>
+          <button id="print-calendar" type="button">Print / PDF</button>
+        </div>
+      </div>
+      <p id="calendar-status" role="status" aria-live="polite"></p>
+      <div class="calendar-legend" id="calendar-legend" aria-label="Timeline legend"></div>
+      <div class="timeline-scroll" tabindex="0" role="region" aria-label="Campaign timeline, scroll horizontally for later dates">
+        <div id="campaign-timeline" class="campaign-timeline"></div>
+      </div>
+      <p class="calendar-footnote">Solid bars: proposed activity. Dark inset: proposed peak investment. Workstreams overlap intentionally; category launches use staged readiness before full setup finishes.</p>
+    </section>
+    <section class="calendar-notes" aria-label="Planning principles">
+      <div><h2>Launch ahead of demand</h2><p>Seasonal content goes live October 12. Toy campaigns launch November 2, ahead of the recommended early-November ramp. Deal campaigns open with late-October teasers.</p></div>
+      <div><h2>Keep the evidence in view</h2><p>Sales uplift describes historical November–December sales versus the rest of the year, not expected campaign return. Search activity is not a purchase measure. <a href="data.html">Review the research</a>.</p></div>
+      <div><h2>Protect regular activity</h2><p>Groceries remain business as usual: +7% historical holiday uplift and no consistent holiday search peak. No dedicated holiday window or incremental seasonal allocation is proposed.</p></div>
+    </section>
+    <section id="print-campaigns" class="print-campaigns" aria-label="Campaign planning details"></section>
+    <dialog id="campaign-dialog" aria-labelledby="detail-title">
+      <div class="dialog-header"><p>Campaign brief / Proposed 2026 plan</p><button id="close-details" type="button" aria-label="Close campaign details">Close</button></div>
+      <div id="campaign-detail"></div>
+    </dialog>
+    <noscript><p>Enable JavaScript to display the interactive campaign timeline.</p></noscript>
   </main>
 
   <footer class="site-footer">

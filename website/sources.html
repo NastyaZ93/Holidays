@@ -30,11 +30,58 @@
   </header>
 
   <main>
-    <section class="construction">
-      <span class="badge" aria-hidden="true">📚</span>
-      <h1>Sources</h1>
-      <p>This page is under construction. Our elves are working on it!</p>
-      <a class="btn" href="index.html">Back to home</a>
+    <section class="page-intro">
+      <p class="eyebrow">Sources</p>
+      <h1>Where our data comes from</h1>
+      <p class="lead">All data is public and covers the United States. Charts are numbered as on the <a href="data.html">What the data shows</a> page.</p>
+    </section>
+
+    <section class="sources">
+      <article class="card source-card">
+        <span class="source-tag">CSV downloads</span>
+        <h2>FRED</h2>
+        <p>Federal Reserve Economic Data, monthly retail sales (Census, not seasonally adjusted).</p>
+        <ul class="source-links">
+          <li><a href="https://fred.stlouisfed.org/series/MRTSSM44W72USN" target="_blank" rel="noopener noreferrer">Retail sales excl. motor vehicles and gas stations <span>MRTSSM44W72USN</span></a></li>
+          <li><a href="https://fred.stlouisfed.org/series/MRTSSM45112USN" target="_blank" rel="noopener noreferrer">Hobby, toy and game stores <span>MRTSSM45112USN</span></a></li>
+          <li><a href="https://fred.stlouisfed.org/series/MRTSSM448USN" target="_blank" rel="noopener noreferrer">Clothing and accessory stores <span>MRTSSM448USN</span></a></li>
+          <li><a href="https://fred.stlouisfed.org/series/MRTSSM443USN" target="_blank" rel="noopener noreferrer">Electronics and appliance stores <span>MRTSSM443USN</span></a></li>
+          <li><a href="https://fred.stlouisfed.org/series/MRTSSM4541USN" target="_blank" rel="noopener noreferrer">Electronic shopping and mail-order <span>MRTSSM4541USN</span></a></li>
+          <li><a href="https://fred.stlouisfed.org/series/MRTSSM4451USN" target="_blank" rel="noopener noreferrer">Grocery stores <span>MRTSSM4451USN</span></a></li>
+        </ul>
+        <p class="used-in">Used in charts 1 and 2</p>
+      </article>
+
+      <article class="card source-card">
+        <span class="source-tag">Dataset</span>
+        <h2>Kaggle</h2>
+        <p>US retail sales dataset by kind of business, based on US Census data.</p>
+        <ul class="source-links">
+          <li>File: <code>us_retail_sales_2020_2025.xlsx</code></li>
+        </ul>
+        <p class="used-in">Used in chart 3</p>
+      </article>
+
+      <article class="card source-card">
+        <span class="source-tag">CSV downloads</span>
+        <h2>Google Trends</h2>
+        <p>United States, web search, 1 September – 31 December, seasons 2020–2025.</p>
+        <ul class="source-links">
+          <li><a href="https://trends.google.com/trends/explore" target="_blank" rel="noopener noreferrer">Google Trends Explore</a></li>
+        </ul>
+        <p class="used-in">Used in charts 4 and 5</p>
+      </article>
+
+      <article class="card source-card">
+        <span class="source-tag">API</span>
+        <h2>Wikipedia Pageviews API</h2>
+        <p>Daily views of the English Wikipedia article "Christmas".</p>
+        <ul class="source-links">
+          <li><a href="https://wikimedia.org/api/rest_v1/" target="_blank" rel="noopener noreferrer">Wikimedia REST API</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Christmas" target="_blank" rel="noopener noreferrer">"Christmas" article</a></li>
+        </ul>
+        <p class="used-in">Used in chart 4</p>
+      </article>
     </section>
   </main>
 

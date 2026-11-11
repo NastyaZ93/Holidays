@@ -1,0 +1,86 @@
+.campaign-page { max-width: 1500px; }
+.calendar-intro h1 { font-family: "Mountains of Christmas", Georgia, serif; font-size: 2.8rem; line-height: 1.15; margin: 0 0 1rem; }
+.calendar-intro h1 span { color: var(--gold); }
+.calendar-intro > p { max-width: 850px; }
+.planning-note, .calendar-footnote { color: var(--muted); font-size: .95rem; }
+.calendar-workspace { margin-top: 2rem; border-top: 3px solid var(--gold); padding-top: 1.25rem; }
+.calendar-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.calendar-toolbar h2 { font-size: 1.25rem; margin: 0; }
+.calendar-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.calendar-controls label { display: flex; align-items: center; gap: .5rem; font-size: .9rem; }
+.calendar-controls select, .calendar-controls button { font: inherit; padding: .5rem .7rem; border: 1px solid var(--gold); border-radius: 4px; background: #fff; color: #172a20; min-height: 40px; }
+.calendar-controls button { cursor: pointer; }
+.calendar-controls button:hover { background: var(--gold); }
+.priority-filter input { width: 18px; height: 18px; accent-color: var(--red); }
+#calendar-status { font-size: .9rem; color: var(--muted); }
+.calendar-legend { display: flex; flex-wrap: wrap; gap: .6rem 1.25rem; padding: .5rem 0 1rem; }
+.legend-entry { font-size: .85rem; display: inline-flex; align-items: center; gap: .4rem; }
+.legend-entry::before { content: ""; width: 12px; height: 12px; background: var(--campaign-color); border: 1px solid #fff9; }
+.timeline-scroll { overflow: auto; max-width: 100%; background: #fff; color: #192b22; border: 1px solid #c9d2ca; }
+.campaign-timeline { min-width: 1550px; }
+.timeline-row { display: grid; grid-template-columns: 235px minmax(0, 1fr); min-height: 48px; border-bottom: 1px solid #dfe5df; }
+.timeline-label { position: sticky; left: 0; z-index: 3; background: #fff; padding: .65rem .8rem; font-size: .85rem; border-right: 1px solid #d4ddd5; line-height: 1.35; display: flex; align-items: center; }
+.timeline-track { position: relative; min-width: 0; background: repeating-linear-gradient(to right, transparent 0, transparent calc(var(--week-width) - 1px), #e3e8e3 calc(var(--week-width) - 1px), #e3e8e3 var(--week-width)); }
+.month-row { min-height: 40px; font-weight: 700; }
+.month-label, .week-label { position: absolute; top: 0; height: 100%; padding: .5rem .3rem; border-right: 1px solid #d4ddd5; white-space: nowrap; overflow: hidden; }
+.month-row .timeline-track, .month-row .timeline-label { background: #e6eee8; }
+.week-row { min-height: 36px; }
+.week-label { font-size: .7rem; }
+.event-row { min-height: 98px; }
+.event-marker { position: absolute; top: 9px; border-left: 2px solid #b3202a; height: 75px; font-size: .7rem; line-height: 1.2; white-space: nowrap; padding-left: 4px; font-weight: 700; }
+.event-1, .event-3 { top: 48px; height: 35px; }
+.event-2, .event-3 { width: max-content !important; transform: translateX(-100%); text-align: right; padding-right: 4px; border-left: 0; border-right: 2px solid #b3202a; }
+.group-row { min-height: 32px; }
+.group-row .timeline-label, .group-row .timeline-track { background: #e6eee8; font-weight: 700; }
+.group-row .timeline-label { font-size: .75rem; text-transform: uppercase; }
+.cycle-bar, .campaign-bar { position: absolute; top: 9px; height: 30px; border-radius: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: 4px 8px; font: inherit; font-size: .75rem; text-align: left; }
+.cycle-bar { background: #dce5df; color: #243f2e; border: 1px solid #adbdaf; }
+.campaign-bar { background: var(--campaign-color); color: #fff; cursor: pointer; border: 1px solid #0002; z-index: 2; }
+.campaign-bar:hover { filter: brightness(1.15); }
+.campaign-bar:focus-visible { z-index: 4; outline-color: #15291c; }
+.peak-band { position: absolute; bottom: 0; height: 7px; background: #0007; border-top: 1px solid #fff9; pointer-events: none; }
+.date-guide, .boundary-guide { position: absolute; top: 0; bottom: 0; border-left: 1px dashed #b3202a55; pointer-events: none; }
+.boundary-guide { border-left: 2px dotted #506558; }
+.control-label { display: block; padding: .8rem; color: #536258; font-size: .85rem; }
+.calendar-notes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e8c46a55; }
+.calendar-notes h2 { font-size: 1.15rem; color: var(--gold); }
+.calendar-notes p { font-size: .95rem; }
+#campaign-dialog { position: fixed; inset: 0; width: min(700px, calc(100% - 2rem)); max-height: 85dvh; padding: 1.5rem; border: 2px solid var(--gold); border-radius: 8px; color: #192b22; background: #fff; }
+#campaign-dialog::backdrop { background: #00150dbb; }
+.dialog-header { display: flex; gap: 1rem; align-items: center; justify-content: space-between; border-bottom: 1px solid #dae2db; }
+.dialog-header p { font-size: .8rem; }
+.dialog-header button { cursor: pointer; background: #1b4d33; color: white; border: 0; padding: .6rem .8rem; border-radius: 4px; }
+#campaign-detail h2 { font-size: 1.8rem; margin-bottom: .25rem; }
+.brief-priority { color: #8c1c25; font-weight: 700; }
+.brief-fields dt { font-weight: 700; margin-top: 1rem; }
+.brief-fields dd { margin: .2rem 0 0; }
+#campaign-detail li { margin-bottom: .6rem; }
+.brief-caveat { border-top: 1px solid #dae2db; padding-top: 1rem; font-size: .85rem; }
+.print-campaigns { display: none; }
+@media (max-width: 700px) {
+  .calendar-intro h1 { font-size: 2rem; }
+  .calendar-controls { align-items: flex-start; gap: .75rem; }
+  .calendar-controls > label:first-child { flex-basis: 100%; }
+  .calendar-notes { grid-template-columns: 1fr; gap: .5rem; }
+  .campaign-page .calendar-intro { margin-top: .5rem; }
+  body:has(.campaign-page) .site-header { position: relative; }
+  .timeline-row { grid-template-columns: 175px minmax(0, 1fr); }
+  .timeline-label { font-size: .75rem; }
+}
+@media print {
+  @page { size: A3 landscape; margin: 12mm; }
+  body:has(.campaign-page) { background: #fff; color: #172a20; }
+  .site-header, .site-footer, #snow-overlay, .calendar-controls, #campaign-dialog { display: none !important; }
+  .campaign-page { padding: 0; max-width: none; }
+  .campaign-page * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .calendar-intro h1, .calendar-intro h1 span, .planning-note, .calendar-footnote, #calendar-status, .calendar-notes h2 { color: #172a20; }
+  .timeline-scroll { overflow: visible; }
+  .campaign-timeline { min-width: 0; }
+  .timeline-row { grid-template-columns: 190px minmax(0, 1fr); break-inside: avoid; }
+  .timeline-label { position: static; }
+  .week-label { font-size: 7px; }
+  .campaign-bar, .cycle-bar { font-size: 8px; padding-left: 3px; }
+  .calendar-notes { gap: 1rem; }
+  .print-campaigns { display: block; }
+  .print-campaigns article { break-before: page; }
+}
