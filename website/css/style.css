@@ -549,6 +549,197 @@ img.avatar {
   }
 }
 
+/* Conclusions */
+.table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  border: 3px solid var(--gold);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.hypothesis-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--cream);
+  color: #1f2a24;
+  font-size: 1.05rem;
+}
+
+.hypothesis-table th,
+.hypothesis-table td {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid #e6dcc8;
+}
+
+.hypothesis-table thead th {
+  background: var(--red);
+  color: #fff;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hypothesis-table tbody th {
+  font-family: "Mountains of Christmas", Georgia, serif;
+  font-size: 1.6rem;
+  color: var(--red);
+  width: 4rem;
+}
+
+.hypothesis-table tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+.hypothesis-table td:last-child {
+  width: 40%;
+}
+
+.result {
+  display: inline-block;
+  margin: 0 0.4rem 0.3rem 0;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.result-yes {
+  background: var(--green);
+  color: #fff;
+}
+
+.result-partial {
+  background: var(--gold);
+  color: var(--green-dark);
+}
+
+.recommendations {
+  list-style: none;
+  counter-reset: rec;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.recommendations li {
+  counter-increment: rec;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.1rem 1.5rem;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--red), var(--red-dark));
+  border: 2px solid var(--gold);
+  font-size: 1.1rem;
+}
+
+.recommendations li::before {
+  content: counter(rec);
+  flex: none;
+  font-family: "Mountains of Christmas", Georgia, serif;
+  font-size: 2.4rem;
+  line-height: 1;
+  color: var(--gold);
+  width: 2rem;
+  text-align: center;
+}
+
+.recommendations strong {
+  color: var(--gold);
+}
+
+.limitations ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: 0.6rem;
+  font-size: 1.05rem;
+}
+
+.limitations li::marker {
+  content: "❄  ";
+  color: var(--gold);
+}
+
+/* Sources */
+.sources {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.source-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.source-card p {
+  font-size: 1.05rem;
+}
+
+.source-tag {
+  align-self: flex-start;
+  padding: 0.15rem 0.7rem;
+  border-radius: 999px;
+  background: var(--red);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.source-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.source-links li::before {
+  content: "❄ ";
+  color: var(--gold);
+}
+
+.source-links a {
+  color: var(--cream);
+  text-decoration-color: var(--gold);
+  text-underline-offset: 3px;
+}
+
+.source-links a:hover,
+.source-links a:focus-visible {
+  color: var(--gold);
+}
+
+.source-links span,
+.source-links code {
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 0.85rem;
+  color: var(--gold);
+}
+
+.source-card .used-in {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px dashed rgba(232, 196, 106, 0.4);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .sources {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Footer */
 .site-footer {
   text-align: center;
